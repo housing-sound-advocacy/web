@@ -3,7 +3,7 @@
   parserOptions: {
     project: './tsconfig.json'
   },
-  "extends": ["plugin:@typescript-eslint/recommended", "airbnb-typescript"],
+  "extends": ["plugin:react/recommended", "plugin:@typescript-eslint/recommended", "airbnb-typescript"],
   "env": {
     "browser": true,
     "jest": true,
@@ -57,6 +57,9 @@
   },
   "plugins": ["@typescript-eslint", "react", "jsx-a11y", "import"],
   "settings": {
+    react: {
+      version: "detect"
+    },
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"]
     }
