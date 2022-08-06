@@ -1,0 +1,78 @@
+{
+  "parser": "@typescript-eslint/parser",
+  parserOptions: {
+    project: './tsconfig.json'
+  },
+  "extends": ["plugin:@typescript-eslint/recommended", "airbnb-typescript"],
+  "env": {
+    "browser": true,
+    "jest": true,
+    "jasmine": true,
+    "jquery": true
+  },
+  "rules": {
+    "object-curly-newline": "off",
+    "global-require": 0,
+    "func-names": ["off"],
+    "max-len": ["error", 120],
+    "no-plusplus": ["off"],
+    "no-underscore-dangle": ["off"],
+    "quotes": ["error", "single"],
+    "quote-props": ["off"],
+    "react/prop-types": ["off"],
+    "no-shadow": ["off"],
+    "react/jsx-key": ["error"],
+    "react/no-array-index-key": ["off"],
+    "react/sort-comp": [
+      "error",
+      {
+        "order": [
+          "type-annotations",
+          "static-methods",
+          "lifecycle",
+          "everything-else",
+          "render"
+        ]
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore"
+      }
+    ],
+    "no-use-before-define": ["off"],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "react/jsx-props-no-spreading": ["off"],
+    "@typescript-eslint/explicit-module-boundary-types": ["off"],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ]
+  },
+  "plugins": ["@typescript-eslint", "react", "jsx-a11y", "import"],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.js", "**/*.jsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "no-param-reassign": [2, { "props": false }],
+        "max-len": ["error", { "code": 200 }]
+      }
+    }
+  ]
+}
+
