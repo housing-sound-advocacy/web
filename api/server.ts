@@ -37,6 +37,9 @@ app.get('/sign-up', (_req: Request, res) => {
   });
 });
 
+app.use('/map', express.static('dist'));
+app.use('/app.bundle.js', express.static('dist/app.bundle.js'));
+
 app.listen(port, () => {
   console.warn(`⚡️[server]: Server is running at https://localhost:${port}`);
 });
