@@ -5,7 +5,7 @@ import { auth } from 'express-openid-connect';
 dotenv.config();
 
 const app: Express = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 
 const config = {
   authRequired: false,
