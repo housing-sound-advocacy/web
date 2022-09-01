@@ -56,4 +56,4 @@ jobs:
           app-name: 'housing-sound-advocacy'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4375A7F49CAE4ED0B0AE7154E3AB9FA0 }}
-          package: .
+          package: hp.zip
