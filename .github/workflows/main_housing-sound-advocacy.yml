@@ -25,13 +25,16 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
+          npm run build-server --if-present
+
+      - name: Zip all files for upload between jobs
+        run: zip -r hp.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          path: hp.zip
 
   deploy:
     runs-on: ubuntu-latest
