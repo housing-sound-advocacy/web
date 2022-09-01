@@ -9,6 +9,13 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
+  AUTH_BASE_URL: ${{ secrets.AUTH_BASE_URL }}
+  AUTH_CLIENT_ID: ${{ secrets.AUTH_CLIENT_ID }}
+  AUTH_ISSUER_BASE_URL: ${{ secrets.AUTH_ISSUER_BASE_URL }}
+  REACT_APP_MAPBOX_TOKEN: ${{ secrets.REACT_APP_MAPBOX_TOKEN }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
