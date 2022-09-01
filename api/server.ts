@@ -2,7 +2,9 @@ import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import { auth } from 'express-openid-connect';
 
-dotenv.config();
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config();
+}
 
 const app: Express = express();
 const port = process.env.PORT || 8080;
