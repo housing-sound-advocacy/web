@@ -1,9 +1,10 @@
 const path = require('path');
+const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     app: path.join(__dirname, 'src', 'index.tsx'),
   },
@@ -40,7 +41,7 @@ module.exports = {
       template: path.join(__dirname, 'src', 'index.html'),
     }),
     new webpack.DefinePlugin({
-      'process.env.REACT_APP_MAPBOX_TOKEN' : JSON.stringify(process.env.REACT_APP_MAPBOX_TOKEN),
+      'process.env.REACT_APP_MAPBOX_TOKEN': JSON.stringify(process.env.REACT_APP_MAPBOX_TOKEN),
     }),
   ],
 };
