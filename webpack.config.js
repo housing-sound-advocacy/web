@@ -42,6 +42,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env.REACT_APP_MAPBOX_TOKEN': JSON.stringify(process.env.REACT_APP_MAPBOX_TOKEN),
+      'REACT_APP_MAPBOX_TOKEN': JSON.stringify(process.env.REACT_APP_MAPBOX_TOKEN),
     }),
   ],
 };
