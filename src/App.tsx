@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 // import Ward from './manual/wards';
 import Overlays from './manual/overlays';
+import Circles from './manual/circles';
+import Popups from './popups';
 
 export default function App() {
   mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
@@ -12,6 +14,8 @@ export default function App() {
   const [zoom] = useState(13);
   // const ward = new Ward();
   const overlays = new Overlays();
+  const circles = new Circles();
+  const popups = new Popups();
 
   const mapStyles = {
     width: '100vw',
@@ -30,12 +34,11 @@ export default function App() {
     });
   });
   useEffect(() => {
-    console.warn('useEffect2');
     if (!map.current) return; // initialize map only once
-    console.warn('useEffect2: initializing map');
     map.current.on('load', () => {
-      console.warn('Loading!');
       overlays.addOverlays(map.current);
+      circles.addOverlays(map.current);
+      popups.addPopups(map.current);
       // ward.torontoWardsJSONfromKML(map.current);
     });
   });
