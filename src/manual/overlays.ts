@@ -3,7 +3,7 @@
 import { Map } from 'mapbox-gl';
 
 export default class Overlays {
-  addOverlays = (map: Map) => {
+  addOverlays = (_map: Map) => {
 
     /*
   const polygonHOUSINGWORKER = L.polygon([
@@ -11,44 +11,7 @@ export default class Overlays {
 { color: 'pink', fillColor:'pink', weight: 7 }).addTo(mymap).bindPopup('<center><a href="WA/jobdescriptionhousingworkerWA_draft3.pdf">vision for a housing worker&strategist at Workman Arts (draft 3)</a></center>');
 */
 
-    map.addSource('circle', {
-      type: 'geojson',
-      data: {
-        type: 'FeatureCollection',
-        features: [
-          {
-            type: 'Feature',
-            geometry: {
-              type: 'Point',
-              coordinates: [-79.418278, 43.644274],
-            },
-            properties: {
-              'description': 'Hello Popup',
-            },
-          },
-        ],
-      },
-    });
-
-    map.addLayer({
-      'id': 'circle',
-      'type': 'circle',
-      'source': 'circle',
-      'paint': {
-        'circle-stroke-color': '#FFFF00',
-        'circle-color': '#575211',
-        'circle-stroke-opacity': 0.8,
-        'circle-radius': 8,
-      },
-    });
   /*
-L.circle([43.644140, -79.418100], {
-  color: '#FFFF00',
-  fillColor: '#575211',
-  fillOpacity: 0.8,
-  radius: 400, // this is in meters, not kilometers
-}).bindTooltip('Workman Arts is here').addTo(mymap);
-
 L.circle([43.661042, -79.383945], {
   color: '#FF00CC',
   fillColor: '#FF99FF',
