@@ -1,0 +1,341 @@
+
+body {
+  background-color: blue;
+  padding: 0;
+  margin: 0;
+}
+
+
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  position: relative;
+  margin: 0;
+  padding-top:10px;
+}
+
+p {
+  font-family: helvetica;
+  color: white;
+  font-size: 16px;
+}
+/*with index 5, i have hidden it behind the map*/
+#titlebar {
+  width:100%;
+  height: 50px;
+  background-color: rgb(30, 31, 27);
+  top:0;
+  z-index: 7;
+  display: inline-block;
+  position: fixed;
+}
+
+
+#mapid {
+    height:100vh;
+    z-index: 6;
+}
+/* this z-index has to be smaller than that of the overlay which is 11 (see below) */
+/* this z-index is missing in the original instructions by Lucas */
+
+/* ===== INFO PANEL ===== */
+
+/*z-index = number of stacks; larger number comes on top */
+
+#trigger {
+  font-size:35px;
+  cursor:pointer;
+  position:fixed;
+  top: 3px;
+  left:20px;
+  z-index: 9;
+  color: white;
+  font-family: cursive;
+}
+
+#trigger2 {
+  font-size: 35px;
+  cursor:pointer;
+  position:fixed;
+  top:3px;
+  right:20px;
+  z-index: 9;
+  color:fuchsia;
+  font-family: cursive;
+}
+
+#trigger3 {
+  font-size: 35px;
+  cursor:pointer;
+  position:fixed;
+  top:3px;
+  left: 45%;
+  z-index: 9;
+  color:red;
+  font-family: cursive;
+}
+
+#trigger4 {
+  font-size: 35px;
+  cursor:pointer;
+  position:fixed;
+  top:3px;
+  left: 22%;
+  z-index: 9;
+  color:darkgoldenrod;
+  font-family: cursive;
+}
+
+#trigger5 {
+  font-size: 35px;
+  cursor:pointer;
+  position:fixed;
+  top:3px;
+  left: 68%;
+  z-index: 9;
+  color:#527B2D;/*#81C940;*/
+  font-family: cursive;
+}
+
+.closebtn {
+    position: absolute;
+    top: 17px;
+    right: 10px;
+    font-size: 35px !important;
+    color: white;
+    line-height:0px;
+}
+
+.closebtn2 {
+  position: absolute;
+  top: 17px;
+  left: 40px;
+  font-size: 35px !important;
+  color: white;
+  font-family:'Courier New', Courier, monospace;
+line-height:0px;
+}
+
+.overlay1 {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  left: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgb(136, 126, 100);
+  overflow-x: hidden;
+  transition: 0.2s;
+}
+
+/*.overlay2 {
+  height: 100%;
+  width: 25%;
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  right: -25%;
+  background-color: rgb(77, 58, 58);
+  overflow-x: hidden;
+  transition: 0.3s;
+}*/
+
+.overlay2 {
+  height: 100%;
+  width: 55%;
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  right: -80%;
+  overflow-x: hidden;
+  background-color:#FFC8FF;/*#334721;*/
+  opacity: 95%;
+  transition: 0.3s;
+}
+/* when no background-color
+then the overlay is transparent!!
+*/
+.overlay3 {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  left: 30%;
+  right: -20%;
+  background-color: black;
+  opacity: 90%;
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: hidden;
+  transition: 0.3s;
+}
+
+/* when no background-color
+then the overlay is transparent!!
+*/
+.overlay4 {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  left: 20%;
+  right: -20%;
+  background-color: rgb(136, 126, 100);
+  opacity: 95%;
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: hidden;
+  transition: 0.3s;
+}
+
+.overlay5 {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  left: 40%;
+  /*right: -20%;*/
+  background-color: rgb(136, 126, 100);
+  opacity: 95%;
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: hidden;
+  transition: 0.3s;
+}
+
+
+.overlay-content {
+  position: relative;
+  top: 2%;
+  text-align: center;
+  margin-top: 20px;
+  padding:20px;
+  color: white;
+}
+
+.overlay-content2 {
+  position: relative;
+  top: 2%;
+  text-align: center;
+  /*width: 100%;*/
+  margin-top: 20px;
+  padding: 20px;
+  color: black;
+}
+
+.overlay a {
+  padding: 5px;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  display: block;
+  transition: 0.2s;
+  font-weight:normal;
+  text-align:left;
+}
+
+.overlay2 a {
+    padding: 5px;
+    text-decoration: none;
+    font-family:'Courier New', Courier, monospace;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    font-weight:normal;
+    text-align:left;
+}
+
+div.elem-group {
+  margin: 40px 0;
+}
+
+label {
+  display: block;
+  font-family:'Courier New', Courier, monospace;
+  padding-bottom: 4px;
+  font-size: 18px;
+}
+
+input, select, textarea {
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family:'Courier New', Courier, monospace;
+  width: 100%;
+  padding: 8px;
+}
+
+textarea {
+  height: 250px;
+}
+
+button {
+  height: 50px;
+  background: white;
+  color: blue;
+  text-align: center;
+  border: 2px solid #ccc;
+  font-size: 18px;
+  font-family:'Courier New', Courier, monospace;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid white;
+}
+
+.black{
+  color: black;
+}
+.pink{
+  color:deeppink;
+}
+.blue{
+  color: blue;
+}
+.red{
+  color: crimson;
+}
+.lightgrey{
+  color: lightgrey;
+}
+.grey{
+  color: grey;
+}
+.darkgrey{
+  color: darkgrey;
+}
+.dimgrey{
+  color: dimgrey;
+}
+.darkviolet{
+  color: darkviolet;
+}
+.magenta{
+  color: magenta;
+}
+.sienna {
+  color: sienna
+}
+.saddlebrown{
+  color: saddlebrown;
+}
+.olive{
+  color: olive;
+}
+.darkgoldenrod{
+  color:darkgoldenrod;
+}
+.lightyellow{
+  color:lightyellow
+}
+.brightyellow{
+  color:#FFFF00
+}
+
+
